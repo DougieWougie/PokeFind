@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/pokeball.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFind — UK Pokemon Card Price Finder</title>
+    <meta name="description" content="Find Pokemon cards and sealed products in stock at fair prices across UK retailers. Beat the scalpers." />
+    <!-- Apply theme class before first paint to avoid flash -->
+    <script>
+      (function () {
+        var saved = localStorage.getItem('pokefind-theme');
+        if (saved !== 'light') document.documentElement.classList.add('dark');
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

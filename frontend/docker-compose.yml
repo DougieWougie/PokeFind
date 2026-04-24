@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        VITE_API_URL: https://pokefind-api.yourdomain.com
+    container_name: pokefind-frontend
+    restart: unless-stopped
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

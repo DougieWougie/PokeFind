@@ -1,0 +1,14 @@
+services:
+  api:
+    build: .
+    container_name: pokefind-api
+    restart: unless-stopped
+    environment:
+      PORT: "3001"
+      FRONTEND_ORIGIN: "https://pokefind.yourdomain.com"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
