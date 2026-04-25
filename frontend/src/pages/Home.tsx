@@ -25,7 +25,7 @@ export function Home() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-[80vh] px-4 gap-10 relative overflow-hidden">
+    <main className="flex flex-col items-center justify-center min-h-[80vh] px-4 gap-6 sm:gap-10 py-8 relative overflow-hidden">
       {/* Subtle radial glow behind hero */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-pokemon-yellow/5 dark:bg-pokemon-yellow/10 rounded-full blur-3xl" />

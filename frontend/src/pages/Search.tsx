@@ -104,44 +104,42 @@ export function Search() {
       />
 
       {query && (
-        <div className="space-y-3">
-          <div className="flex items-center justify-between flex-wrap gap-3">
-            <div className="flex items-center gap-4 flex-wrap">
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                {isLoading ? (
-                  <span>Searching across retailers…</span>
-                ) : mode === 'products' ? (
-                  <span>
-                    <span className="font-semibold text-gray-800 dark:text-gray-200">{productResults.length}</span>
-                    {isFiltered && <span className="text-gray-400 dark:text-gray-500"> of {allProducts.length}</span>}
-                    <span> listings</span>
-                    {inStockCount > 0 && (
-                      <span className="ml-2 text-green-600 dark:text-green-400 font-medium">· {inStockCount} in stock</span>
-                    )}
-                  </span>
-                ) : (
-                  <span>
-                    <span className="font-semibold text-gray-800 dark:text-gray-200">{cardResults.length}</span>
-                    {isFiltered && <span className="text-gray-400 dark:text-gray-500"> of {allCards.length}</span>}
-                    <span> cards</span>
-                  </span>
-                )}
-              </p>
-
-              {!isLoading && (allProducts.length > 0 || allCards.length > 0) && (
-                <PriceFilter
-                  min={minPrice}
-                  max={maxPrice}
-                  onMinChange={setMinPrice}
-                  onMaxChange={setMaxPrice}
-                />
+        <div className="space-y-2">
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {isLoading ? (
+                <span>Searching across retailers…</span>
+              ) : mode === 'products' ? (
+                <span>
+                  <span className="font-semibold text-gray-800 dark:text-gray-200">{productResults.length}</span>
+                  {isFiltered && <span className="text-gray-400 dark:text-gray-500"> of {allProducts.length}</span>}
+                  <span> listings</span>
+                  {inStockCount > 0 && (
+                    <span className="ml-2 text-green-600 dark:text-green-400 font-medium">· {inStockCount} in stock</span>
+                  )}
+                </span>
+              ) : (
+                <span>
+                  <span className="font-semibold text-gray-800 dark:text-gray-200">{cardResults.length}</span>
+                  {isFiltered && <span className="text-gray-400 dark:text-gray-500"> of {allCards.length}</span>}
+                  <span> cards</span>
+                </span>
               )}
-            </div>
+            </p>
 
             {mode === 'products' && !isLoading && allProducts.length > 0 && (
               <p className="text-xs text-gray-300 dark:text-gray-600">Cached 15 min · prices may vary</p>
             )}
           </div>
+
+          {!isLoading && (allProducts.length > 0 || allCards.length > 0) && (
+            <PriceFilter
+              min={minPrice}
+              max={maxPrice}
+              onMinChange={setMinPrice}
+              onMaxChange={setMaxPrice}
+            />
+          )}
 
           {mode === 'products' && !isLoading && availableRetailers.length > 0 && (
             <FilterBar

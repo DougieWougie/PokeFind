@@ -6,7 +6,7 @@ interface Props {
   onHideScalpersChange: (v: boolean) => void;
 }
 
-const pillBase = 'px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 select-none cursor-pointer';
+const pillBase = 'px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 select-none cursor-pointer';
 const pillActive = 'bg-pokemon-yellow text-gray-900 shadow-sm';
 const pillInactive = 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700';
 
