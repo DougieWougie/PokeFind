@@ -5,10 +5,3 @@ services:
     restart: unless-stopped
     environment:
       PORT: "3001"
-      FRONTEND_ORIGIN: "https://pokefind.yourdomain.com"
-    networks:
-      - proxy
-
-networks:
-  proxy:
-    external: true
